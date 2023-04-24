@@ -21,7 +21,7 @@ app.get('/', (req, res,next) => {
     
     res.write("Witam w aplikacji Hello World Player<br>");
   if(req.query.videoFile){
-	res.write("<video width='320' height='240' id='videoPlayer' controls><source src='" + req.query.videoFile + "' type='video/mp4'></video><br>");
+	res.write("<video width='320' height='240' id='videoPlayer' src='" + req.query.videoFile + "' type='video/mp4' controls> </video><br>");
 	res.write("<script>function videoCancel(){const elem = document.getElementById('videoPlayer');elem.setAttribute('src', 'cancel.mp4');}</script>");
 	res.write("<button type='button' onclick='videoCancel()' id='videoCancel'>Cancel Video</button><br>");
 
@@ -31,7 +31,7 @@ app.get('/', (req, res,next) => {
   }
   
   if(req.query.audioFile){
-	res.write("<audio controls id='audioPlayer'><source='" + req.query.audio +"'/></audio><br>");
+	res.write("<audio controls id='audioPlayer' src='" + req.query.audio +"' controls></audio><br>");
 	res.write("<script>function audioCancel(){const elem = document.getElementById('audioPlayer');elem.setAttribute('src', 'cancel.mp3');}</script>");
 	res.write("<button type='button' onclick='audioCancel()' id='audioCancel'>Cancel Audio</button><br>");
 
